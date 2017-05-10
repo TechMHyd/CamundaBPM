@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns="http://www.omg.org/spec/DMN/20151101/dmn.xsd" xmlns:biodi="http://bpmn.io/schema/dmn/biodi/1.0" xmlns:camunda="http://camunda.org/schema/1.0/dmn" id="definitions_0389rrl" name="definitions" namespace="http://camunda.org/schema/1.0/dmn">
+  <decision id="businessRules" name="discount">
+    <extensionElements>
+      <biodi:bounds x="200" y="200" width="180" height="80" />
+    </extensionElements>
+    <decisionTable id="decisionTable">
+      <input id="input1" label="orderAmount" camunda:inputVariable="orderAmount">
+        <inputExpression id="inputExpression1" typeRef="long">        <text>orderAmount</text>
+</inputExpression>
+      </input>
+      <output id="output1" label="discount" name="discount" typeRef="integer" />
+      <rule id="row-681771474-1">
+        <inputEntry id="UnaryTests_1cbpmag">        <text>[500..1000[</text>
+</inputEntry>
+        <outputEntry id="LiteralExpression_0t3wax6">        <text>10</text>
+</outputEntry>
+      </rule>
+      <rule id="row-681771474-2">
+        <inputEntry id="UnaryTests_0sl32tg">        <text>[1000..5000[</text>
+</inputEntry>
+        <outputEntry id="LiteralExpression_1aecgcy">        <text>20</text>
+</outputEntry>
+      </rule>
+      <rule id="row-681771474-3">
+        <inputEntry id="UnaryTests_0j51uw2">        <text>[5000..10000[</text>
+</inputEntry>
+        <outputEntry id="LiteralExpression_0cxrf1g">        <text>30</text>
+</outputEntry>
+      </rule>
+    </decisionTable>
+  </decision>
+</definitions>
